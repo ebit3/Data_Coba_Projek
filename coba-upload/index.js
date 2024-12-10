@@ -162,7 +162,7 @@ window.deleteUser = async function (id) {
 		const userData = userSnapshot.val();
 		const publicId = userData.publicId;
 
-		const deleteResponse = await fetch('/api/delete', {
+		const deleteResponse = await fetch('/coba-upload/api/delete', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({ publicId }),
