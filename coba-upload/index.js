@@ -162,7 +162,7 @@ window.deleteUser = async function (id) {
 		const userData = userSnapshot.val();
 		const publicId = userData.publicId;
 
-		const deleteResponse = await fetch('http://localhost:5000/delete', {
+		const deleteResponse = await fetch('/api/delete', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({ publicId }),
