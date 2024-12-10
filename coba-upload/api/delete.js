@@ -1,3 +1,11 @@
+import { v2 as cloudinary } from 'cloudinary';
+
+cloudinary.config({
+	cloud_name: 'dhei3po2m',
+	api_key: '684285221384396', // Ganti dengan API Key Anda
+	api_secret: 'sfr0Xa79bgV4NQKq1xJ0tYOgnYA', // Ganti dengan API Secret Anda
+});
+
 export default async function handler(req, res) {
 	if (req.method === 'POST') {
 		const { publicId } = req.body;
@@ -9,14 +17,7 @@ export default async function handler(req, res) {
 		}
 
 		try {
-			// Logika untuk menghapus gambar dari Cloudinary
-			const cloudinary = require('cloudinary').v2;
-			cloudinary.config({
-				cloud_name: 'dhei3po2m',
-				api_key: '684285221384396',
-				api_secret: 'sfr0Xa79bgV4NQKq1xJ0tYOgnYA',
-			});
-
+			// Menghapus gambar dari Cloudinary
 			const response = await cloudinary.uploader.destroy(
 				publicId
 			);
